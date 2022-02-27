@@ -49,6 +49,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkImage" destination="YwJ-3Y-7E8" id="Tgm-Bi-bXU"/>
                                             <outlet property="todoLabel" destination="bct-fW-7lZ" id="DzI-oP-riS"/>
                                         </connections>
                                     </tableViewCell>
@@ -111,6 +112,9 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="등록"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="8XD-F2-rsJ" eventType="touchUpInside" id="2WS-8s-HUG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urw-jN-JzP">
                                 <rect key="frame" x="20" y="123" width="172" height="40"/>
@@ -127,6 +131,9 @@
                         <viewLayoutGuide key="safeArea" id="5DV-rf-bmf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="taskTextField" destination="Ba0-eA-dQG" id="hk3-6I-oJg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9g-9C-6dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

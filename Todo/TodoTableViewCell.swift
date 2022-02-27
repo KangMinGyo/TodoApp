@@ -10,6 +10,7 @@ import UIKit
 class TodoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var todoLabel: UILabel!
+    @IBOutlet weak var checkImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
