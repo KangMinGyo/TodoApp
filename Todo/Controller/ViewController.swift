@@ -43,6 +43,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return "삭제"
     }
     
+    //check 기능 추가
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if todoList[indexPath.row].isComplete == false {
+            todoList[indexPath.row].isComplete = true
+        } else {
+            todoList[indexPath.row].isComplete = false
+        }
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
