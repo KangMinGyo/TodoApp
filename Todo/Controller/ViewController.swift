@@ -54,10 +54,44 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadData()
     }
     
+    //UserDefault 저장
+    func saveTask() {
+        let data = todoList.map {
+            [
+                "task": $0.task,
+                "isComplete": $0.isComplete
+            
+            ]
+        }
+        let userDefault = UserDefaults.standard
+        userDefault.set(data, forKey: "items")
+    }
+    
+    //UserDefault 데이터 불러오기
+    func loadTask() {
+        let userDefault = UserDefaults.standard
+        guard let data = userDefault.object(forKey: "items") as? [[String: AnyObject]] else {
+            return
+        }
+        print(data.description)
+        
+        //todoList에 저장
+        print(type(of: data))
+        
+        todoList = data.map {
+            var task = $0["task"] as? String
+            var isComplete = $0["isComplete"] as? Bool
+            
+            return Task(task: task!, isComplete: isComplete!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "할 일"
+        
+        loadTask()
         
         NotificationCenter.default.addObserver(
                   self,
@@ -74,6 +108,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.saveTask()
         }
     }
 
