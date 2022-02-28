@@ -9,7 +9,7 @@ import UIKit
 
 var todoList: [Task] = []
 
-class ViewController: UIViewController, UITableViewDataSource  {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,6 +28,22 @@ class ViewController: UIViewController, UITableViewDataSource  {
         return cell
     }
     
+    //cell 스와이프 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            todoList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            
+        }
+    }
+    
+    //스와이프 이름 변경 Delete -> 삭제
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "삭제"
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,6 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource  {
 //        todoList.append(Task(task: "test2", isComplete: true))
     }
     
+    //dismiss
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
