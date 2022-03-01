@@ -33,6 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if editingStyle == .delete {
             todoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            UserDefaults.standard.removeObject(forKey: "items")
         } else if editingStyle == .insert {
             
         }
