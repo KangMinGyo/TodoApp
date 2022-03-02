@@ -62,6 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             todoList[indexPath.row].isComplete = false
         }
+        saveTask()
         tableView.reloadData()
     }
     
