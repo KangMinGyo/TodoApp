@@ -33,7 +33,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if editingStyle == .delete {
             todoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            let data = todoList.map {
+                [
+                    "task": $0.task,
+                    "isComplete": $0.isComplete
+                ]
+            }
             UserDefaults.standard.removeObject(forKey: "items")
+            UserDefaults.standard.set(data, forKey: "items")
+            
+
         } else if editingStyle == .insert {
             
         }
@@ -61,7 +71,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             [
                 "task": $0.task,
                 "isComplete": $0.isComplete
-            
             ]
         }
         let userDefault = UserDefaults.standard
@@ -80,8 +89,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print(type(of: data))
         
         todoList = data.map {
-            var task = $0["task"] as? String
-            var isComplete = $0["isComplete"] as? Bool
+            let task = $0["task"] as? String
+            let isComplete = $0["isComplete"] as? Bool
             
             return Task(task: task!, isComplete: isComplete!)
         }
