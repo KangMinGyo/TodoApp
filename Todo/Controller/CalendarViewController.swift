@@ -10,7 +10,7 @@ import FSCalendar
 
 class CalendarViewController: UIViewController{
     
-    @IBOutlet weak var calender: FSCalendar!
+    @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var todayView: UIView!
     
     override func viewDidLoad() {
@@ -18,7 +18,8 @@ class CalendarViewController: UIViewController{
     
         // Do any additional setup after loading the view.
         todayView.layer.cornerRadius = 15.0
-        
+        calendar.appearance.headerDateFormat = "YYYY년 M월"
+        calendar.appearance.headerMinimumDissolvedAlpha = 0.0
     }
     
 

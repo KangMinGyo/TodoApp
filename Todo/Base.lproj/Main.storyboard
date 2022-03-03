@@ -274,7 +274,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Z94-cM-Sug"/>
                     <connections>
-                        <outlet property="calender" destination="Ql9-FZ-AgD" id="eRh-ft-5O6"/>
+                        <outlet property="calendar" destination="Ql9-FZ-AgD" id="8H1-6J-zFJ"/>
                         <outlet property="todayView" destination="oyh-cB-P3o" id="XPh-iv-q5c"/>
                     </connections>
                 </viewController>
