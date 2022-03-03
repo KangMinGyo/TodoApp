@@ -189,17 +189,94 @@
             </objects>
             <point key="canvasLocation" x="1983" y="1006"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar View Controller-->
         <scene sceneID="x4o-CR-4nb">
             <objects>
-                <viewController id="Kno-5Y-Vhh" sceneMemberID="viewController">
+                <viewController id="Kno-5Y-Vhh" customClass="CalendarViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O4d-iD-AFw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql9-FZ-AgD" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="88" width="374" height="350"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="YED-Yv-rln"/>
+                                    <constraint firstAttribute="width" constant="374" id="bDe-hh-hVN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" systemColor="systemYellowColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
+                                        <color key="value" systemColor="systemGray4Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" systemColor="systemGray4Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVW-LC-8ZK">
+                                <rect key="frame" x="0.0" y="443" width="414" height="2"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="yuf-hb-u69"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwd-RX-Ae0">
+                                <rect key="frame" x="20" y="453" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyh-cB-P3o">
+                                <rect key="frame" x="20" y="485" width="374" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="오늘의 한줄" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uIV-Ih-36S">
+                                        <rect key="frame" x="8" y="23" width="358" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="rBN-gi-d0s"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mu0-Fi-I51"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mu0-Fi-I51" firstAttribute="trailing" secondItem="oyh-cB-P3o" secondAttribute="trailing" constant="20" id="1J1-Dd-hyp"/>
+                            <constraint firstItem="LVW-LC-8ZK" firstAttribute="top" secondItem="Ql9-FZ-AgD" secondAttribute="bottom" constant="5" id="A53-6i-gRs"/>
+                            <constraint firstItem="mu0-Fi-I51" firstAttribute="trailing" secondItem="Ql9-FZ-AgD" secondAttribute="trailing" constant="20" id="B7y-bp-tVQ"/>
+                            <constraint firstItem="oyh-cB-P3o" firstAttribute="leading" secondItem="mu0-Fi-I51" secondAttribute="leading" constant="20" id="EhY-hk-Y7t"/>
+                            <constraint firstItem="Ql9-FZ-AgD" firstAttribute="top" secondItem="mu0-Fi-I51" secondAttribute="top" id="Ftk-xq-yw6"/>
+                            <constraint firstItem="mu0-Fi-I51" firstAttribute="trailing" secondItem="Kwd-RX-Ae0" secondAttribute="trailing" constant="20" id="L66-uu-QMI"/>
+                            <constraint firstItem="mu0-Fi-I51" firstAttribute="trailing" secondItem="LVW-LC-8ZK" secondAttribute="trailing" id="M21-sh-gFw"/>
+                            <constraint firstItem="Ql9-FZ-AgD" firstAttribute="leading" secondItem="mu0-Fi-I51" secondAttribute="leading" constant="20" id="ML7-HE-WQO"/>
+                            <constraint firstItem="LVW-LC-8ZK" firstAttribute="leading" secondItem="mu0-Fi-I51" secondAttribute="leading" id="iAB-KY-wVl"/>
+                            <constraint firstItem="Kwd-RX-Ae0" firstAttribute="leading" secondItem="mu0-Fi-I51" secondAttribute="leading" constant="20" id="laW-6I-TOG"/>
+                            <constraint firstItem="Kwd-RX-Ae0" firstAttribute="top" secondItem="LVW-LC-8ZK" secondAttribute="bottom" constant="8" id="pQr-mf-VKL"/>
+                            <constraint firstItem="oyh-cB-P3o" firstAttribute="top" secondItem="Kwd-RX-Ae0" secondAttribute="bottom" constant="8" id="qss-ke-NQw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z94-cM-Sug"/>
+                    <connections>
+                        <outlet property="calender" destination="Ql9-FZ-AgD" id="eRh-ft-5O6"/>
+                        <outlet property="todayView" destination="oyh-cB-P3o" id="XPh-iv-q5c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFh-0O-C9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,8 +332,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
