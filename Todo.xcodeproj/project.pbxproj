@@ -11,6 +11,7 @@
 		3D2318AE27CB6824007A1F2F /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2318AD27CB6824007A1F2F /* AddTaskViewController.swift */; };
 		3D2318B127CBC4EF007A1F2F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2318B027CBC4EF007A1F2F /* Task.swift */; };
 		3D2318B327D04535007A1F2F /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2318B227D04535007A1F2F /* CalendarViewController.swift */; };
+		3D2318B527D08A55007A1F2F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2318B427D08A55007A1F2F /* SettingViewController.swift */; };
 		3D6D219B27C8DE9700FFACD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D219A27C8DE9700FFACD1 /* AppDelegate.swift */; };
 		3D6D219D27C8DE9700FFACD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D219C27C8DE9700FFACD1 /* SceneDelegate.swift */; };
 		3D6D219F27C8DE9700FFACD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D219E27C8DE9700FFACD1 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		3D2318AD27CB6824007A1F2F /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		3D2318B027CBC4EF007A1F2F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3D2318B227D04535007A1F2F /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		3D2318B427D08A55007A1F2F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3D6D219727C8DE9700FFACD1 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6D219A27C8DE9700FFACD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6D219C27C8DE9700FFACD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				3D6D219E27C8DE9700FFACD1 /* ViewController.swift */,
 				3D2318AD27CB6824007A1F2F /* AddTaskViewController.swift */,
 				3D2318B227D04535007A1F2F /* CalendarViewController.swift */,
+				3D2318B427D08A55007A1F2F /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				3D6D219F27C8DE9700FFACD1 /* ViewController.swift in Sources */,
 				3D6D219B27C8DE9700FFACD1 /* AppDelegate.swift in Sources */,
 				3D6D219D27C8DE9700FFACD1 /* SceneDelegate.swift in Sources */,
+				3D2318B527D08A55007A1F2F /* SettingViewController.swift in Sources */,
 				3D6D21AF27C8ECAC00FFACD1 /* TodoTableViewCell.swift in Sources */,
 				3D2318B127CBC4EF007A1F2F /* Task.swift in Sources */,
 				3D2318B327D04535007A1F2F /* CalendarViewController.swift in Sources */,

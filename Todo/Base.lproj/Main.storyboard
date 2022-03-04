@@ -176,18 +176,39 @@
         <!--설정-->
         <scene sceneID="Rjh-bf-Eq1">
             <objects>
-                <viewController id="4rs-9I-Yct" sceneMemberID="viewController">
+                <viewController id="4rs-9I-Yct" customClass="SettingViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JkT-I0-0UJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIG-Sh-k1k">
+                                <rect key="frame" x="20" y="44" width="374" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="공유하기">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1p-Jn-aiG">
+                                <rect key="frame" x="20" y="95" width="374" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HPf-Yq-rUz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="RhN-pe-tmw"/>
+                    <connections>
+                        <outlet property="shareButton" destination="BIG-Sh-k1k" id="LSF-ri-g1h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d50-kp-ASy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="1006"/>
+            <point key="canvasLocation" x="1982.608695652174" y="1005.8035714285713"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="x4o-CR-4nb">
@@ -247,6 +268,9 @@
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Kno-5Y-Vhh" id="KGe-cd-sxO"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -275,12 +299,13 @@
                     <navigationItem key="navigationItem" id="Z94-cM-Sug"/>
                     <connections>
                         <outlet property="calendar" destination="Ql9-FZ-AgD" id="8H1-6J-zFJ"/>
+                        <outlet property="todayTextField" destination="uIV-Ih-36S" id="Xnj-Pm-i1g"/>
                         <outlet property="todayView" destination="oyh-cB-P3o" id="XPh-iv-q5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFh-0O-C9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2892.753623188406" y="296.65178571428572"/>
+            <point key="canvasLocation" x="2893" y="297"/>
         </scene>
         <!--할 일-->
         <scene sceneID="KD4-A6-M1x">
