@@ -8,5 +8,6 @@ target 'Todo' do
   # Pods for Todo
 
   pod 'FSCalendar'
+  pod 'Firebase/Analytics' # Google Analytics
 
 end

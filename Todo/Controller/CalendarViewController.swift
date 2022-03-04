@@ -14,6 +14,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, UITextFieldD
     @IBOutlet weak var todayView: UIView!
     @IBOutlet weak var todayTextField: UITextField!
     
+    var todayCheck: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, UITextFieldD
     //캘린더 눌렀을 때
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         setEvents()
+        if todayTextField.text != "" {
+            todayCheck = true
+        }
+        print(todayCheck)
     }
     
     func setEvents() {
